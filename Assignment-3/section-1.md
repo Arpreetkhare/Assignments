@@ -2,7 +2,7 @@
 ---
 
 
-
+```bash
 for (int i = 0; i >= 0; i++) {
     System.out.println(i);
 }
@@ -12,6 +12,7 @@ for (int i = 0; i >= 0; i++) {
 
 **Correction:** Modify the loop condition to ensure it becomes false at some point:
 
+```bash
 for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
@@ -21,6 +22,7 @@ for (int i = 0; i < 10; i++) {
 
 
 
+```bash
 for (int i = 0; i <= 10; i++) {
     System.out.println(i);
 }
@@ -30,6 +32,7 @@ for (int i = 0; i <= 10; i++) {
 
 **Correction:** Adjust the loop condition to prevent the additional iteration:
 
+```bash
 for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
@@ -38,16 +41,19 @@ for (int i = 0; i < 10; i++) {
 ---
 
 
-
+```bash
 for (int i = 10; i < 0; i--) {
     System.out.println(i);
 }
+
 ```
 
 **Error:** The loop body never executes because the initial condition `i < 0` is false at the start.
 
 **Correction:** Change the loop condition to match the intended logic:
 
+
+```bash
 for (int i = 10; i >= 0; i--) {
     System.out.println(i);
 }
@@ -56,7 +62,7 @@ for (int i = 10; i >= 0; i--) {
 ---
 
 
-
+```bash
 for (int i = 0; i < 5; ) {
     System.out.println(i);
 }
@@ -66,6 +72,7 @@ for (int i = 0; i < 5; ) {
 
 **Correction:** Include an increment statement to ensure the loop progresses:
 
+```bash
 for (int i = 0; i < 5; i++) {
     System.out.println(i);
 }
@@ -74,7 +81,7 @@ for (int i = 0; i < 5; i++) {
 ---
 
 
-
+```bash
 for (int i = 0; i < 5; i++);
 {
     System.out.println("Loop executed");
@@ -85,6 +92,7 @@ for (int i = 0; i < 5; i++);
 
 **Correction:** Remove the semicolon after the loop header:
 
+```bash
 for (int i = 0; i < 5; i++) {
     System.out.println("Loop executed");
 }
@@ -93,7 +101,7 @@ for (int i = 0; i < 5; i++) {
 ---
 
 
-
+```bash
 for (int i = 0; i < 3; i++) {
     for (int j = 3; j >= 0; j++) {
         System.out.println("i: " + i + ", j: " + j);
@@ -105,6 +113,7 @@ for (int i = 0; i < 3; i++) {
 
 **Correction:** Adjust the inner loop's condition to achieve the intended iteration pattern:
 
+```bash
 for (int i = 0; i < 3; i++) {
     for (int j = 2; j >= 0; j--) {
         System.out.println("i: " + i + ", j: " + j);
