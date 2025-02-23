@@ -1,6 +1,7 @@
 
 public class Task {
 
+    //positive number
     public static boolean Positive(int num) {
         if (num > 0) {
             return true;
@@ -11,11 +12,13 @@ public class Task {
 
     };
 
+    // Negative number
     public static boolean Negative(int num) {
        return num < 0 ;
 
     };
 
+    // Odd or even
     public static String OddOrEven(int num){
         if (num % 2 == 0) {
             return "Even";
@@ -23,6 +26,8 @@ public class Task {
         return "Odd" ;  
     }
 
+
+    // Greeting
     static void displayGreeting(int time) {
         if (time >= 5 && time < 12) {
             System.out.println("Good Morning!");
@@ -31,12 +36,15 @@ public class Task {
         }
     }
 
+
+    //Area of square
     public static double side = 25; // 1st way to Predefined number
     public static double  calculateAreaOfSquare() {
         double area = side * side;
         return area;
     }
 
+    //Area of rectangular
     public static double  calculateAreaOfRectangle(double  length, double width) {
         double area = length * width;
         return area ;
@@ -44,6 +52,7 @@ public class Task {
         
     }
 
+    // Largest number 
     public static int  findLargest(int a, int b, int c) {
         if (a >= b && a >= c) {
             return a;
