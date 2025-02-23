@@ -1,6 +1,5 @@
-
+### Snippet 1: 
 ---
-
 
 ```bash
 for (int i = 0; i >= 0; i++) {
@@ -17,6 +16,7 @@ for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
 ```
+### Snippet 2: 
 
 ---
 
@@ -37,6 +37,7 @@ for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
 ```
+### Snippet 3: 
 
 ---
 
@@ -58,6 +59,7 @@ for (int i = 10; i >= 0; i--) {
     System.out.println(i);
 }
 ```
+### Snippet 4: 
 
 ---
 
@@ -77,6 +79,7 @@ for (int i = 0; i < 5; i++) {
     System.out.println(i);
 }
 ```
+### Snippet 5: 
 
 ---
 
@@ -97,6 +100,7 @@ for (int i = 0; i < 5; i++) {
     System.out.println("Loop executed");
 }
 ```
+### Snippet 6: 
 
 ---
 
