@@ -58,6 +58,10 @@ ls
 ls  /                          
 ```
 
+
+docs                
+file.txt       
+file1.txt      
 ---
 
 ### g) File Searching
@@ -67,7 +71,16 @@ find . -type f -name "*.txt"
 
 grep "Linux" file1.txt               
 ```
-
+./output.txt
+./docs/file3.txt
+./data.txt
+./numbers.txt
+./file4.txt
+./input.txt
+./duplicate.txt
+./fruit.txt
+./file.txt
+./file1.txt
 ---
 
 ### h) System Information
@@ -113,7 +126,16 @@ sed -i 's/Linux/Unix/g' file1.txt
 ```bash
 head -n 10 data.txt
 ```
-
+hey you are
+are y there
+nonano
+her
+ji
+pass
+g
+t
+road
+jaam
 ---
 
 ### b) Display last 5 lines of "data.txt"
