@@ -213,5 +213,6 @@ sort fruit.txt | uniq -c
 1 papaya
 ---
 
-![Screenshot](https://raw.githubusercontent.com/Arpreetkhare/Assignments/main/Assignment-4/screen.jpg)
+![Screenshot of Output](Output/Screenshot 2025-02-27 115251.png)
+
 
