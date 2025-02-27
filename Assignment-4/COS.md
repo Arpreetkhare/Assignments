@@ -207,6 +207,8 @@ pok
 ```bash
 sort fruit.txt | uniq -c
 ```
+![Alt text](file:///C:/Users/arpit/Pictures/screen.jpg)
+
 2 banana
 2 mango
 1 papaya
