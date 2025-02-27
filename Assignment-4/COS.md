@@ -213,6 +213,7 @@ sort fruit.txt | uniq -c
 1 papaya
 ---
 
-![Screenshot of Output](Output/Screenshot 2025-02-27 115251.png)
+![Screenshot of Output](Output/Screenshot_2025-02-27_115251.png)
+
 
 
