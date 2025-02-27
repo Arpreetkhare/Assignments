@@ -143,7 +143,11 @@ jaam
 ```bash
 tail -n 5 data.txt
 ```
-
+pass
+g
+t
+road
+jaam
 ---
 
 ### c) Display first 15 lines of "numbers.txt"
@@ -151,7 +155,21 @@ tail -n 5 data.txt
 ```bash
 head -n 15 numbers.txt
 ```
-
+1
+2
+3
+4
+5
+6
+7
+8
+7
+6
+6
+6666
+6
+6
+66666666666666666
 ---
 
 ### d) Display last 3 lines of "numbers.txt"
@@ -159,7 +177,9 @@ head -n 15 numbers.txt
 ```bash
 tail -n 3 numbers.txt
 ```
-
+6
+6
+66666666666666666
 ---
 
 ### e) Translate lowercase to uppercase in "input.txt"
@@ -175,6 +195,10 @@ tr 'a-z' '1-Z' < input.txt > output.txt
 ```bash
 sort duplicate.txt | uniq
 ```
+aka
+anu
+anuanu
+pok
 
 ---
 
@@ -183,6 +207,8 @@ sort duplicate.txt | uniq
 ```bash
 sort fruit.txt | uniq -c
 ```
-
+2 banana
+2 mango
+1 papaya
 ---
 
