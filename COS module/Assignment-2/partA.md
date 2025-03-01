@@ -1,11 +1,9 @@
-What will the following commands do? 
- 
-echo "Hello, World!"  
+ echo "Hello, World!"  
 
 # This command will print "Hello, World!" to the console.
-```
- name="Productive" 
 
+ name="Productive" 
+# cmd will print name in terminal while running echo $name.
 
  touch file.txt  
 # This command will create a new file called "file.txt" in the current directory.
