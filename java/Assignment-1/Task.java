@@ -38,7 +38,7 @@ public class Task {
 
 
     //Area of square
-    public static double side = 25; // 1st way to Predefined number
+    double side; // 1st way to Predefined number
     public static double  calculateAreaOfSquare() {
         double area = side * side;
         return area;
@@ -70,6 +70,9 @@ public class Task {
 
     public static void main(String[] args) {
 
+
+        Task obj = new Task();
+        obj.side =25;
         //Check Positive Number: 
         System.out.println(Positive(5)); // prints: true
         System.out.println(Positive(-5)); // prints: False

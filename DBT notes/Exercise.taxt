@@ -1,0 +1,410 @@
+SQL Exercise 1 
+1. Create the table SEMP with the following structure:- 
+EMPNO 
+CHAR(4) 
+EMPNAME 
+CHAR(20) 
+BASIC FLOAT 
+DEPTNO 
+CHAR(2) 
+DEPTHEAD 
+CHAR(4) 
+
+
+
+2. Create the table SDEPT with the following structure:- 
+DEPTNO 
+CHAR(2) 
+DEPTNAME CHAR(15) 
+
+3. Insert into the SDEPT table the following values:- 
+10, Development 
+20, Training 
+
+
+4. Insert into the SEMP table the following values:- 
+0001, SUNIL, 6000, 10 
+0002, HIREN, 8000, 20 
+0003, ALI, 4000, 10, 0001 
+0004, GEORGE, 6000, 0002 
+
+
+Create S, P, J, SPJ tables as specified below and insert a few rows in each table:- 
+SUPPLIER 
+(S#, Sname, Status, City) 
+- 
+S 
+CREATE TABLE SUPPLIER (
+    ->     `S#` VARCHAR(10) PRIMARY KEY,
+    ->     Sname VARCHAR(50),
+    ->     Status INT,
+    ->     City VARCHAR(50)
+    -> );
+
+PARTS 
+(P#, Pname, Color, Weight, City) 
+- 
+P 
+
+
+CREATE TABLE PARTS (
+    ->     `P#` VARCHAR(10) PRIMARY KEY,
+    ->     Pname VARCHAR(50),
+    ->     Color VARCHAR(50),
+    ->     Weight VARCHAR(50),
+    ->     City VARCHAR(50));
+
+
+
+PROJECTS 
+(J#, Jname, City) 
+- 
+J 
+CREATE TABLE PROJECTS ( `J#` VARCHAR(10) PRIMARY KEY,Jname VARCHAR(50),City VARCHAR(50));
+
+SUPPLIER-PARTS-PROJECT 
+(S#, P#, J#, Qty) 
+
+ create table SJP(
+     `S#` varchar(10),
+     `P#` varchar(20),
+     `J#` varchar(30),
+     Qty int);
+- 
+SPJ 
+Sample data for S# column:- ‘S1’, ‘S2’, ‘S3’, etc. 
+Sample data for P# column:- ‘P1’, ‘P2’, ‘P3’, etc. 
+Sample data for J# column:- ‘J1’, ‘J2’, ‘J3’, etc. 
+Sample data for Status column:- 10, 20, 30, etc. 
+Write the SELECT queries to do the following:- 
+
+
+
+Display all the data from the S table. 
+select * from SUPPLIER;
+Display only the S# and SNAME fields from the S table.
+  select sname from SUPPLIER;
+Display the PNAME and COLOR from the P table for the CITY=”London”.
+
+select pname, color from parts
+    -> where city ='London';
++-------+-------+
+| pname | color |
++-------+-------+
+| Part4 | Black |
+| Part5 | Green |
++-------+-------+
+
+ 
+Display all the Suppliers from London. 
+
+select * from SUPPLIER
+    -> where city ='London';
++----+-------+--------+--------+
+| S# | Sname | Status | City   |
++----+-------+--------+--------+
+| S4 | Ravi  |     40 | London |
+| S7 | Abhi  |     23 | London |
++----+-------+--------+--------+
+
+Display all the Suppliers from Paris or Athens. 
+Select * from suppliers
+Where city in( 'Paris'  ,' Athens' );
+
+Display all the Projects in Athens. 
+Select * from Projects 
+Where city = ' Athens' ;
+
+Display all the Partnames with the weight between 12 and 14 (inclusive of both).
+Select pname from  parts
+Where  weight between 12 and 14 ;
+
+Display all the Suppliers with a Status greater than or equal to 20. 
+Select * from Suppliers 
+Where  ststus >=20;
+
+Display all the Suppliers except the Suppliers from London. 
+Select * from Suppliers 
+Where city !=London;
+
+
+Display only the Cities from where the Suppliers come from. 
+Select distinct city from Suppliers ;
+
+15. Assuming that the Part Weight is in GRAMS, display the same in 
+MILLIGRAMS and KILOGRAMS. 
+select  Pname,Weight,
+Weight * 1000 MILLIGRAMS ,
+Weight / 1000 KILOGRAM 
+ from parts;
+
+
+SQL Exercise 2
+Display the Supplier table in the descending order of CITY.
+
+Select * from SUPPLIER
+Order by city desc;
+
+
+ 
+2. Display the Part Table in the ascending order of CITY and within the city in 
+the ascending order of Part names. 
+
+Select * from parts
+Order by  city asc,pname asc;
+
+
+Display all the Suppliers with a status between 10 and 20. 
+
+Select * from Supplier 
+Where status between 10 and 20;
+
+
+Display all the Parts and their Weight, which are not in the range of 10 and 15. 
+Select * from parts 
+Where Weight  not in(10,15);
+
+Select * from parts
+    -> Where Weight  not in(10,15);
++----+-------+--------+--------+--------+
+| P# | Pname | Color  | Weight | City   |
++----+-------+--------+--------+--------+
+| P1 | Part1 | Red    |  20.55 | Delhi  |
+| P2 | Part2 | Black  |  45.55 | Mumbai |
+| P3 | Part3 | Pink   |  45.55 | Mumbai |
+| P4 | Part4 | Black  |  20.40 | London |
+| P5 | Part5 | Green  |  80.40 | London |
+| P6 | Part6 | Yellow |  50.40 | pune   |
++----+-------+--------+--------+--------+
+
+Select * from parts
+    -> Where Weight not between 10 And 15;
++----+-------+--------+--------+--------+
+| P# | Pname | Color  | Weight | City   |
++----+-------+--------+--------+--------+
+| P1 | Part1 | Red    |  20.55 | Delhi  |
+| P2 | Part2 | Black  |  45.55 | Mumbai |
+| P3 | Part3 | Pink   |  45.55 | Mumbai |
+| P4 | Part4 | Black  |  20.40 | London |
+| P5 | Part5 | Green  |  80.40 | London |
+| P6 | Part6 | Yellow |  50.40 | pune   |
++----+-------+--------+--------+--------+
+
+Display all the Part names starting with the letter ‘S’.
+Select PartName from parts
+Where PartNname like 's%';
+ 
+
+Display all the Suppliers, belonging to cities starting with the letter ‘L’. 
+
+Select * from Supplier
+    Where city like 'L%';
+
+Display all the Projects, with the third letter in JNAME as ‘n’. 
+Select * from Projects 
+Where JNAME like '__n%';
+
+
+ 
+SQL Exercise 3
+
+Display all the Supplier names with the initial letter capital. 
+ select concat(upper(substring(Sname,1,1)),substring(Sname,2)) from supplier;
+Display all the Supplier names in upper case. 
+select upper(Sname) from supplier;
+Display all the Supplier names in lower case. 
+
+select lower(Sname) from supplier;
+Display all the Supplier names padded to 25 characters, with spaces on the left. 
+select lpad(sname,25,' ') from supplier;
+Display all the Supplier names (with ‘la’ replaced by ‘ro’). 
+HINT: REPLACE. 
+select replace(sname,'la','ro') from supplier;
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced 
+with ‘o’. 
+select replace(replace(sname,'l','r'),'a','o') from supplier;
+Display the Supplier names and the lengths of the names. 
+Select sname,length(sname) from supplier;
+
+Select sname,length(sname) from supplier group by sname;
+Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+select sname from supplier where soundex(sname) = soundex('samir');
+
+ 
+Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).
+
+select sname,case when status = 10 then 'Ten' when status = 20 then 'Twenty' when status = 30 then 'Thirty' else 'other' end "deptno" from supplier;
+
+Display the current day (e.g. Thursday). 
+ select dayname(sysdate()) from dual;
+
+
+
+
+SQL Exercise 4
+Display the minimum Status in the Supplier table. 
+Select min(status) from supplier group by status;
+
+Display the maximum Weight in the Parts table. 
+Select max(weight) from parts;
+Display the average Weight of the Parts.
+ Select avg(weight) from parts;
+
+Display the total Quantity sold for part ‘P1’.
+ Select sum(Quantity) from parts where part ='p1';
+
+Display the total Quantity sold for each part. 
+Select part ,sum(Quantity) from parts group by part ;
+
+
+Display the average Quantity sold for each part. 
+Select part ,avg(Quantity) from parts group by part ;
+
+
+7. Display the maximum Quantity sold for each part, provided the maximum Quantity 
+is greater than 800. 
+Select part ,max(Quantity) from parts group by part
+Having max(Quantity)>800 ;
+
+Display the Status and the count of Suppliers with that Status.
+ Select status,count(sname) from supplier group by status;
+
+Display the count of Projects going on in different cities. 
+Select count(project ), city from projects group by city;
+
+What is the difference between COUNT(Status) and COUNT(*) ? 
+ COUNT(Status)---
+This counts the number of non-NULL values in the Status column
+If some rows have a NULL value for Status, those rows will be ignored in the count
+COUNT(*)-----
+This counts all rows in the table, regardless of whether any specific column contains NULL values.
+It includes NULL values because it counts every row, not based on any specific column.
+
+
+
+11. Display the Status and the Count of Suppliers with that Status in the following format 
+as shown below:- 
+select case when status = 10 then 'Ten' when status = 20 then 'Twenty' when status = 30 then 'Thirty' else "OTHER" end status,count(`S#`) as "Count" from supplier group by status;
+Status  Count 
+Ten              1 
+Twenty        2 
+Thirty          3 
+
+
+SQL Exercise 5
+Display the Supplier name and the Quantity sold. 
+select distinct supplier.sname,sjp.qty from supplier,sjp;
+
+Display the Part name and Quantity sold. 
+SELECT p.pname, SUM(s.qty) AS total_quantity_sold 
+ FROM Parts p 
+ JOIN sjp s ON p.`P#` = s.`P#` 
+ GROUP BY p.pname;
+
+
+Display the Project name and Quantity sold. 
+select p.jname,sum(s.qty) as total_qty 
+from projects p join spj s on p.`J#`=s.`J#` 
+ group by p.jname;
+
+
+Display the Supplier name, Part name, Project name and Quantity sold. 
+SELECT s.sname, p.pname, j.jname, c.qty 
+ FROM sjp c 
+ JOIN supplier s ON s.`S#` = c.`S#` 
+ JOIN parts p ON p.`P#` = c.`P#` 
+JOIN projects j ON j.`J#` = c.`J#`;
+
+
+Display the Supplier name, Supplying Parts to a Project in the same City. 
+ select supplier.sname,parts.pname,projects.jname,projects.city 
+from 
+ supplier,parts,projects 
+where supplier.city=parts.city and parts.city=projects.city;
+
+
+
+Display the Part name that is ‘Red’ is color, and the Quantity sold. 
+select parts.pname,sjp.qty from sjp join parts on sjp.`P#`=parts.`P#` 
+where parts.color='red';
+
+
+Display all the Quantity sold by Suppliers with the Status = 20. 
+select supplier.sname,sjp.qty,supplier.status from sjp join supplier 
+on sjp.`S#`=supplier.`S#` where supplier.status=20;
+
+
+
+Display all the Parts and Quantity with a Weight > 14.
+select parts.pname,sjp.qty from sjp join parts on sjp.`P#`=parts.`P#` 
+where parts.weight>14;
+
+
+ 
+Display all the Project names and City, which has bought more than 500 Parts. 
+select projects.jname,projects.city,sjp.qty from projects join sjp on 
+projects.`J#`=sjp.`J#` where sjp.qty>500
+
+
+Display all the Part names and Quantity sold that have a Weight less than 15.
+ select parts.pname,sjp.qty from sjp join parts on sjp.`P#`=parts.`P#` 
+where parts.weight<15;
+
+
+
+Display all the Employee names and the name of their Managers.
+select e.name as EmpName, m.name as ManagerName from emp e  left join emp m on e.manager_id = m.emp_id;
+
+
+
+SQL
+Exercise 6
+ 
+Display all the Suppliers with the same Status as the supplier, ‘CLARK’. 
+
+select * from supplier where status=(select status from emp where ename='CLARK');
+
+
+Display all the Employees in the same department as the employee ‘MILLER’. 
+select * from emp where dept_id=(select dept_id from emp where 
+ename='miller');
+
+
+Display all the Parts which have more Weight than all the Red parts. 
+select * from parts where weight> (select weight from parts where 
+color='red');
+
+
+
+Display all the Projects going on in the same city as the project ‘TAPE’. 
+select * from projects where jname=all(select jname from projects 
+where jname='project 2');
+
+
+Display all the Parts with Weight less than all the Green parts. 
+select pname,weight,color from parts where weight< (select weight 
+from parts where color='green');
+
+
+6. Display the name of the Supplier who has sold the maximum Quantity (in one 
+sale). 
+select supplier.sname from supplier join sjp on 
+supplier.`S#`=sjp.`S#`where sjp.qty=(select max(qty) from sjp);
+
+
+
+Display the name of the Employee with the minimum Salary. 
+select ename from emp where sal=  (select min(sal) from emp);
+
+
+8. Display the name of the Supplier who has sold the maximum overall Quantity (sum 
+of Sales). 
+select sname,sum(qty) from supplier,sjp where 
+supplier.`S#`=sjp.`S#` group by sname order by sum(qty) desc limit 1;
+
+
+Display the name of the Department with the maximum number of Employees.
+select distinct dept.dept_name,count(emp.dept_id) from emp,dept 
+where dept.dept_id=emp.dept_id group by emp.dept_id;
+
+
